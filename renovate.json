@@ -15,6 +15,22 @@
     {
       "matchPackageNames": ["cypress"],
       "enabled": false
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["major"]
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "addLabels": ["minor"]
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "addLabels": ["patch"]
+    },
+    {
+      "matchUpdateTypes": ["digest"],
+      "addLabels": ["digest"]
     }
   ],
   "postUpdateOptions": ["yarnDedupeHighest"],
