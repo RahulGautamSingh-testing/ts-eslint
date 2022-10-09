@@ -1,0 +1,22 @@
+{
+  "automerge": true,
+  "enabledManagers": ["github-actions", "npm"],
+  "internalChecksFilter": "strict",
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "addLabels": ["javascript"]
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "addLabels": ["github-actions"]
+    },
+    {
+      "matchPackageNames": ["cypress"],
+      "enabled": false
+    }
+  ],
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "stabilityDays": 3
+}
