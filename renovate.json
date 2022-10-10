@@ -21,8 +21,8 @@
       "addLabels": ["major"]
     },
     {
-      "matchUpdateTypes": ["minor"],
-      "addLabels": ["minor"]
+      "matchUpdateTypes": ["pin"],
+      "addLabels": ["pin"]
     },
     {
       "matchUpdateTypes": ["patch"],
