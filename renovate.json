@@ -6,15 +6,15 @@
   "npm": {
   "enabled": true
   },
+{
   "regexManagers": [
     {
       "fileMatch": ["^Dockerfile$"],
-      "matchStringsStrategy": "any",
       "matchStrings": [
-        "ENV [A-Z]+_VERSION=(?<currentValue>.*) # (?<datasource>.*?)/(?<depName>.*?)(\\&versioning=(?<versioning>.*?))?\\s",
-        "FROM (?<depName>\\S*):(?<currentValue>\\S*)"
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sARG .*?_VERSION=(?<currentValue>.*)\\s"
       ],
-      "datasourceTemplate": "docker"
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
   ]
+}
 }
