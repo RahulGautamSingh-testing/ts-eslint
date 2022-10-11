@@ -203,7 +203,7 @@ jobs:
           project: ./packages/website
           start: yarn start
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: screenshots
           path: |
