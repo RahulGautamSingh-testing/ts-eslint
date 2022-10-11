@@ -5,7 +5,7 @@
   "labels": ["dependencies"],
   "npm": {
   "enabled": true
-  }
+  },
   "regexManagers": [
     {
  "fileMatch": ["^Dockerfile$"],
