@@ -3,36 +3,17 @@
   "enabledManagers": ["github-actions", "npm"],
   "internalChecksFilter": "strict",
   "labels": ["dependencies"],
-  "packageRules": [
+  "npm": {
+  "enabled": true
+  }
+  "regexManagers": [
     {
-      "matchManagers": ["npm"],
-      "addLabels": ["javascript"]
-    },
-    {
-      "matchManagers": ["github-actions"],
-      "addLabels": ["github-actions"]
-    },
-    {
-      "matchPackageNames": ["cypress"],
-      "enabled": false
-    },
-    {
-      "matchUpdateTypes": ["major"],
-      "addLabels": ["major"]
-    },
-    {
-      "matchUpdateTypes": ["pin"],
-      "addLabels": ["pin"]
-    },
-    {
-      "matchUpdateTypes": ["patch"],
-      "addLabels": ["patch"]
-    },
-    {
-      "matchUpdateTypes": ["digest"],
-      "addLabels": ["digest"]
-    }
-  ],
-  "postUpdateOptions": ["yarnDedupeHighest"],
-  "stabilityDays": 3
+ "fileMatch": ["^Dockerfile$"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "ENV [A-Z]+_VERSION=(?<currentValue>.*) # (?<datasource>.*?)/(?<depName>.*?)(\\&versioning=(?<versioning>.*?))?\\s",
+        "FROM (?<depName>\\S*):(?<currentValue>\\S*)"
+]
+  }
+  ]
 }
