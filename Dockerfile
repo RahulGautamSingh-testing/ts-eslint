@@ -1,6 +1,7 @@
-FROM containerbase/node:14.20.1@sha256:e275fb819c433373dbcdd7e7fc7c4fbdf6a08880e66eb9617ff311b6766e6a2c
+FROM xxx/yyy:zzz
 
-USER root
+ARG FOO_VERSION=1.2.3
+ARG BAR_VERSION=v2.0.1
 
-# renovate: datasource=npm
-RUN install-tool yarn 1.21.0
+RUN curl -fsL -O https://example.com/${FOO_VERSION}/foo.tar.gz
+RUN curl -fsL -O https://bar.example/${BAR_VERSION}/bar_v${BAR_VERSION}.tar.gz
